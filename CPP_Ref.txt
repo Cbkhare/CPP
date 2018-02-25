@@ -1,0 +1,9 @@
+https://stackoverflow.com/questions/2758080/how-to-sort-an-stl-vector
+
+https://stackoverflow.com/questions/8263926/how-to-copy-stdstring-into-stdvectorchar
+std::string str = "hello";
+std::vector<char> data(str.begin(), str.end());
+
+std::string str = "hello";
+std::vector<char> data = /* ... */;
+std::copy(str.begin(), str.end(), std::back_inserter(data));
