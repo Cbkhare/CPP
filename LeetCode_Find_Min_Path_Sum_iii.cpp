@@ -80,22 +80,16 @@ public:
         nv = lv[*it] + node->val;
         if (nv == this->value){
           this->count+=1;
-          lv.erase(it);
         }
-        else{
-          lv[it]= nv;
-        }
+        lv[it]= nv;
       }
 
       for(std::vector<int>::iterator it=rv.begin(); it!=rv.end(); it++){
         nv = rv[*it] + node->val;
         if (nv == this->value){
-          this->count+=1;
-          rv.erase(it);
-        }
-        else{
-          rv[it]= nv;
-        }
+          this->count+=1;}
+        rv[it]= nv;
+
       }
 
       lv.insert(lv.end(), rv.begin(), rv.end());
