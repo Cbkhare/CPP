@@ -42,6 +42,7 @@ rep(i,x) {
   cin>>y;
   v.push_back(y) ;
 }
+
 vector<char> v;
 reps(it,y)
 {

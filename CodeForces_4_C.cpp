@@ -26,7 +26,7 @@ typedef pair <int, int> pii;
 #define reps(i,v) for(int i=0; v[i]; i++)
 #define rep(i, n) for(int i=0;i<n;i++)
 #define max(x,y)  (x>y)?x:y
-#define min(x,y)  (x>y)?x:y
+#define min(x,y)  (x<y)?x:y
 #define len(arr)  sizeof(arr)/sizeof(*arr)
 typedef std::map<int, int> mii;
 typedef std::string::iterator sit;

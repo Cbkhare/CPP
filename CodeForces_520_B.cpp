@@ -32,32 +32,45 @@ typedef pair <int, int> pii;
 #define print_vec(it,v) for(std::vector<int>::iterator it=v.begin(); it!=v.end(); it++) cout <<*it<< ' '
 #define print_vector(v) for (const auto i: v)  std::cout << i << ' ';
 #define max(x,y)  (x>y)?x:y
-#define min(x,y)  (x>y)?x:y
+#define min(x,y)  (x<y)?x:y
 #define len(arr)  sizeof(arr)/sizeof(*arr)
 typedef std::map<int, int> mii;
 typedef std::string::iterator sit;
 typedef std::map<int, int>::iterator miit;
+//int imin = std::numeric_limits<int>::min(); // minimum value
+//int imax = std::numeric_limits<int>::max();
 
 
+long int bazinga(long int a, long int b)
+{
+  if (a>b)
+  {
+    return a-b;
+  }
+  else if (a==b){
+    return 0;
+  }
+  else{
+    int cnt = 0;
+    while (a!=b){
+      if (b&1 or b<a){ //b is odd
+        b++;
+      }
+      else{
+        b/=2;
+      }
+      cnt+=1;
+    }
+    return cnt;
+  }
+
+}
 
 int main()
 {
-  int x,y;
-  string z;
+  long int x,y;
   cin>>x;
   cin>>y;
-  cin>>z;
-  rep(i,y)
-  {
-    reps(it,z)
-    {
-      if (*it=='B' and *(it+1)=='G')
-      {
-        swap(*it,*(it+1));
-        it++;
-      }
-    }
-  }
-  cout<<z<<endl;
+  cout<<bazinga(x,y)<<endl;
   return 0;
 }
