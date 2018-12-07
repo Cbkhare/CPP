@@ -67,6 +67,31 @@ public:
         }
         return v;
     }
+
+      vector<int> countBits_alternative(int num) {
+          vector<int> v;
+          int len_b=1; //length of bit, max_length that but can have
+          for (int i=0;i<=num;i++){
+              //cout<<(i & (i-1))<<endl;
+              bool x;
+              x = i & (i-1);
+              if (i==0){
+                  v.push_back(0);
+              }
+              else{
+                  if (i%2==0){
+                      v.push_back(v[i/2]);
+
+                  }
+                  else{
+                      v.push_back(v[i/2]+1);
+                  }
+              }
+
+          }
+          return v;
+      }
+  };
 };
 
 
