@@ -1,3 +1,20 @@
+//******************************************************************************
+Pass vector to a method:
+- method(vector<int>& ra), called as method(ra)
+  it means vector is passed as a reference and values inside vector can be changed
+  by the method. If defined as const then values can not be changed.
+  To be accessed via [] or at
+- method(vector<int> ra), called as method(ra)
+  It means vector is passed as a copy and values inside vector can NOT be changed
+  by the vector. To be accessed via [] or at
+- method(vector<int>* ra), called as method(& ra)
+  It means vector is passed as a copy and values inside vector can be changed
+  by the vector. To be accessed via . or -> or (*ra)[i]
+  https://stackoverflow.com/questions/5333113/how-to-pass-a-vector-to-a-function
+  https://www.geeksforgeeks.org/passing-vector-function-cpp/
+//******************************************************************************
+
+
 https://stackoverflow.com/questions/2758080/how-to-sort-an-stl-vector
 
 https://stackoverflow.com/questions/8263926/how-to-copy-stdstring-into-stdvectorchar
@@ -10,31 +27,6 @@ std::copy(str.begin(), str.end(), std::back_inserter(data));
 
 
 
+https://stackoverflow.com/questions/6946217/pointer-to-a-vector
 
-curl -k -X GET "https://10.182.105.108/cloudpoint/api/v3/alerts" -H "authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWZXJpdGFzIiwidXNlckVtYWlsIjoiYWRtaW4iLCJleHAiOjE1MzMzNjU1NTgsInVzZXJJZCI6ImE0ZjE1MzBiLTY0M2EtNGM5Mi1hMjU3LTE1ZmJiNDFlZDc1YiIsImlhdCI6MTUzMzI3OTE1OH0.Qbkj8hzKI7qGRpxNpbAlicYPnlJUsh6AFsunQ1dlKl4"
-    
-
-curl -k -H -d '{"asset_id":"vmw-vm_4a7c65dd-82de-4e07-992d-ab4bb1dd502e_50090ba2-6072-72ae-be8c-e37075c255a0","protectionLevel":"host","description":"","name":"test_cb"}' -X POST "https://10.182.97.217/cloudpoint/api/v2/assets/vmw-vm_4a7c65dd-82de-4e07-992d-ab4bb1dd502e_50090ba2-6072-72ae-be8c-e37075c255a0/snapshots/" -H "authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWZXJpdGFzIiwidXNlckVtYWlsIjoiYWRtaW4iLCJleHAiOjE1MzMxMTQzMTgsInVzZXJJZCI6IjA0YmQyODE5LWIzYTItNDBiYS04NTA2LWQ5ZTBmYjlmZjQyNSIsImlhdCI6MTUzMzAyNzkxOH0.xyEnGXuEZwO7bSZyL6KlzsfBNjuPwlrEMZTFZVryMi4"
-
-
-curl -k -X GET "https://10.182.97.217/cloudpoint/api/v2/assets/vmw-vm_4a7c65dd-82de-4e07-992d-ab4bb1dd502e_50090ba2-6072-72ae-be8c-e37075c255a0/snapshots/" -H "authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWZXJpdGFzIiwidXNlckVtYWlsIjoiYWRtaW4iLCJleHAiOjE1MzMxMTQzMTgsInVzZXJJZCI6IjA0YmQyODE5LWIzYTItNDBiYS04NTA2LWQ5ZTBmYjlmZjQyNSIsImlhdCI6MTUzMzAyNzkxOH0.xyEnGXuEZwO7bSZyL6KlzsfBNjuPwlrEMZTFZVryMi4"
-
-from kubernetes import config, client
-import os,time
-while True:
-    os.environ['KUBERNETES_SERVICE_HOST'] = 'kubernetes'
-    config.load_incluster_config()
-    core_v1 = client.CoreV1Api()
-    nodes = core_v1.list_node()
-    healthy_nodes =[]
-    faulty_nodes = []
-    for node in nodes.items:
-      for data in node.status.conditions:
-          if data.type == 'Ready':
-              if data.status == 'True':
-                  # Node is ready state
-                  healthy_nodes.append(node.metadata.name)
-              else:
-                  faulty_nodes.append(node.metadata.name)
-    print (healthy_nodes, faulty_nodes)
-    time.sleep(20)
+www.cplusplus.com/reference/unordered_map/unordered_map/operator[]/
